@@ -29,8 +29,12 @@ public class OddSum {
         // TODO: Replace the line below. Use a for-loop that starts at index 1
         //       and steps by 2 (i += 2), adding arr[i] to a running total.
         //       Recall arr.length gives the number of elements.
-        //       You can index into arrays as we do in Python
+        //       You can index into arrays as we do in Pytho
         //       (e.g. arr[i] gives you the item at index i).
-        return 0;
+        int total = 0;
+        for (int i = 1; i< arr.length; i+=2){
+            total += arr[i];
+        }
+        return total;
     }
 }
