@@ -46,8 +46,18 @@ public class Point {
    */
   @Override
   public String toString() {
-    // TODO
-    return "";
+    StringBuilder coord = new StringBuilder("");
+    String letter1 = String.valueOf(this.x);
+    String letter2 = String.valueOf(this.y);
+    coord.append("(");
+    coord.append(letter1);
+    coord.append(", ");
+    coord.append(letter2);
+    coord.append(")");
+    String result = coord.toString();
+    return result;
+    //    return "(" + x + ", " + y + ")"; is easier LOL the + automattically converts them.
+
   }
 
   /**
@@ -60,6 +70,10 @@ public class Point {
   public boolean equals(Object o) {
     // TODO: check that o is a Point (use `instanceof`), cast it, and compare
     //       the x and y fields.
+    if (o instanceof Point){
+      Point hello = (Point) o;
+      return this.x == hello.getX() && this.y == hello.getY();
+    }
     return false;
   }
 
@@ -71,7 +85,6 @@ public class Point {
    */
   @Override
   public int hashCode() {
-    // TODO: Objects.hash(x, y) is an easy way to combine the fields.
-    return 0;
+    return Objects.hash(x, y);
   }
 }
