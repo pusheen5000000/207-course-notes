@@ -41,7 +41,22 @@ public class Week implements Iterable<String> {
     //         - next() returns the next day and advances, or throws
     //           java.util.NoSuchElementException if none remain.
     //       Replace the empty iterator below with an instance of your class.
-    return Collections.emptyIterator();
+    public class miniWeek implements Iterator<String>{
+      private int index = 0;
+
+      public boolean hasNext(){
+        return index < days.length;
+      }
+      public String next(){
+        String day = days[index];
+        index ++;
+        return day;
+      }
+    }
+    @Override
+    public Iterator<String> iterator() {
+        return new miniWeek();
+    }
   }
 
   /** Prints each day of the week, one per line. */
