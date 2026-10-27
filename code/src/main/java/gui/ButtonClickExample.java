@@ -35,7 +35,8 @@ public class ButtonClickExample {
           JPanel buttonPanel = new JPanel();
           JButton submit = new JButton("Submit");
           buttonPanel.add(submit);
-          buttonPanel.add(new JButton("Cancel"));
+          JButton cancel = new JButton("Cancel");
+          buttonPanel.add(cancel);
 
           submit.addActionListener(
               new ActionListener() {
@@ -46,6 +47,15 @@ public class ButtonClickExample {
                   JOptionPane.showMessageDialog(null, "Hello " + firstName + " " + lastName);
                 }
               });
+              cancel.addActionListener(
+              new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                  firstNameField.setText("");
+                   lastNameField.setText("");
+                }
+              });
+          
 
           JPanel mainPanel = new JPanel();
           mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
